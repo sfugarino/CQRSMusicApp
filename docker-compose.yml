@@ -1,0 +1,19 @@
+version: '3.4'
+
+services:
+  music.api:
+    image: ${DOCKER_REGISTRY-}musicapi
+    build:
+      context: .
+      dockerfile: Music.API/Dockerfile
+    environment:
+      - MSSQL_SA_PASSWORD=Password1*
+  
+  docker-demo-sqlserver:
+    container_name: docker-demo-sqlserver-container
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=Password1*
+    ports:
+      - "1433:1433"
