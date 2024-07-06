@@ -11,11 +11,9 @@ namespace Music.Persistence.Tests
         public async Task Fetch_All_Artist_Successfully()
         {
             // Arrange
-            var factory = new InMemoryApplicationDbFactory();
+            using var factory = new InMemoryApplicationDbFactory("FetchAllDb");
             var dbContext = factory.CreateDbContext();
             var repository = new ArtistRepository(dbContext);
-
-            dbContext.Artists.RemoveRange(dbContext.Artists);
 
             await dbContext.Artists.AddRangeAsync(new[]
 {
@@ -44,7 +42,7 @@ namespace Music.Persistence.Tests
         public async Task Fetch_Artist_By_Id_Successfully()
         {
             // Arrange
-            var factory = new InMemoryApplicationDbFactory();
+            using var factory = new InMemoryApplicationDbFactory("FetchByIdDb");
             var dbContext = factory.CreateDbContext();
             var repository = new ArtistRepository(dbContext);
 
@@ -71,7 +69,7 @@ namespace Music.Persistence.Tests
         public async Task Add_Artist_Successfully()
         {
             // Arrange
-            var factory = new InMemoryApplicationDbFactory();
+            using var factory = new InMemoryApplicationDbFactory("AddDb");
             var dbContext = factory.CreateDbContext();
             var repository = new ArtistRepository(dbContext);
             var artist = new Artist { Id = Guid.NewGuid(), Name = "Artist 4" };
@@ -91,7 +89,7 @@ namespace Music.Persistence.Tests
         public async Task Remove_Artist_Successfully()
         {
             // Arrange
-            var factory = new InMemoryApplicationDbFactory();
+            using var factory = new InMemoryApplicationDbFactory("RemoveDb");
             var dbContext = factory.CreateDbContext();
             var repository = new ArtistRepository(dbContext);
 
