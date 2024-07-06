@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Music.Infrastructure", "Mus
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Music.Persistence", "Music.Persistence\Music.Persistence.csproj", "{A62202A4-BAC3-4A6E-B37B-EBA2ED4023CF}"
 EndProject
-Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "Music.App", "Music.App\Music.App.esproj", "{8B9D3D37-FDF4-4463-9010-03F5D875732C}"
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "Music.UI", "Music.App\Music.UI.esproj", "{8B9D3D37-FDF4-4463-9010-03F5D875732C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Music.API", "Music.API\Music.API.csproj", "{7291101D-E956-4698-A7BD-F1D3F2C3E03A}"
 EndProject
