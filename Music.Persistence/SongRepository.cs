@@ -9,7 +9,7 @@ using Music.Domain.Repositories;
 
 namespace Music.Persistence
 {
-    internal sealed class SongRepository : ISongRepository
+    public sealed class SongRepository : ISongRepository
     {
         private ApplicationDbContext _context;
 

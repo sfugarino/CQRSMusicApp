@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Music.Infrastructure", "Mus
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Music.Persistence", "Music.Persistence\Music.Persistence.csproj", "{A62202A4-BAC3-4A6E-B37B-EBA2ED4023CF}"
 EndProject
-Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "Music.UI", "Music.App\Music.UI.esproj", "{8B9D3D37-FDF4-4463-9010-03F5D875732C}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Music.API", "Music.API\Music.API.csproj", "{7291101D-E956-4698-A7BD-F1D3F2C3E03A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unit Tests", "Unit Tests", "{8FA8502E-E688-47BA-801F-64E684937CE2}"
@@ -22,6 +20,8 @@ EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{A435BAE3-B28B-4893-AA81-BD61F2B1D539}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Music.Application", "Music.Application\Music.Application.csproj", "{38EADB70-B905-4BBF-A238-65EB403AB4B7}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "Music.WebUI", "Music.WebUI\Music.WebUI.esproj", "{A1C3F84C-AE7D-442A-84AE-63694D8F4BC1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,12 +41,6 @@ Global
 		{A62202A4-BAC3-4A6E-B37B-EBA2ED4023CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A62202A4-BAC3-4A6E-B37B-EBA2ED4023CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A62202A4-BAC3-4A6E-B37B-EBA2ED4023CF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8B9D3D37-FDF4-4463-9010-03F5D875732C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8B9D3D37-FDF4-4463-9010-03F5D875732C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8B9D3D37-FDF4-4463-9010-03F5D875732C}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{8B9D3D37-FDF4-4463-9010-03F5D875732C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8B9D3D37-FDF4-4463-9010-03F5D875732C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8B9D3D37-FDF4-4463-9010-03F5D875732C}.Release|Any CPU.Deploy.0 = Release|Any CPU
 		{7291101D-E956-4698-A7BD-F1D3F2C3E03A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7291101D-E956-4698-A7BD-F1D3F2C3E03A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7291101D-E956-4698-A7BD-F1D3F2C3E03A}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -63,6 +57,12 @@ Global
 		{38EADB70-B905-4BBF-A238-65EB403AB4B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{38EADB70-B905-4BBF-A238-65EB403AB4B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{38EADB70-B905-4BBF-A238-65EB403AB4B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1C3F84C-AE7D-442A-84AE-63694D8F4BC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1C3F84C-AE7D-442A-84AE-63694D8F4BC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1C3F84C-AE7D-442A-84AE-63694D8F4BC1}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{A1C3F84C-AE7D-442A-84AE-63694D8F4BC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1C3F84C-AE7D-442A-84AE-63694D8F4BC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1C3F84C-AE7D-442A-84AE-63694D8F4BC1}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

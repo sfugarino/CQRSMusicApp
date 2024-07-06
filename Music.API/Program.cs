@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Music.Persistence;
+using Music.Domain.Repositories;
 using Music.Persistence.Options;
 using Music.Infrastructure;
 using Microsoft.Extensions.Options;
@@ -30,11 +31,14 @@ builder.Services.AddDbContext<ApplicationDbContext>(
 
 builder.Services.Scan(scan => scan
     .FromAssemblies(
-    Music.Persistence.AssemblyReference.Assembly,
     Music.Infrastructure.AssemblyReference.Assembly)
     .AddClasses(false)
     .AsImplementedInterfaces()
     .WithScopedLifetime());
+
+builder.Services.AddScoped<ISongRepository, SongRepository>();
+builder.Services.AddScoped<IAlbumRepository, AlbumRepository>();
+builder.Services.AddScoped<IArtistRepository, ArtistRepository>();
 
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Music.Application.AssemblyReference.Assembly));
 
