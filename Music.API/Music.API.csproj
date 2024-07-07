@@ -25,6 +25,11 @@
     <ProjectReference Include="..\Music.Domain\Music.Domain.csproj" />
     <ProjectReference Include="..\Music.Infrastructure\Music.Infrastructure.csproj" />
     <ProjectReference Include="..\Music.Persistence\Music.Persistence.csproj" />
+    <ProjectReference Include="..\Music.Presentation\Music.Presentation.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers\" />
   </ItemGroup>
 
 </Project>

@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "Music.Presentation": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:48795;http://localhost:48796"
+    }
+  }
+}

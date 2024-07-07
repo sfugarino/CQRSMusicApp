@@ -42,7 +42,10 @@ builder.Services.AddScoped<IArtistRepository, ArtistRepository>();
 
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Music.Application.AssemblyReference.Assembly));
 
-builder.Services.AddControllers();
+builder.Services.
+    AddControllers()
+    .AddApplicationPart(Music.Presentation.AssemblyReference.Assembly);
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
