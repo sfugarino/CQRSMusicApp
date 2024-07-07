@@ -22,9 +22,9 @@ namespace Music.Persistence.Tests
 
             await dbContext.Albums.AddRangeAsync(new[]
 {
-                new Album { Id = Guid.NewGuid(), Title = "Album 1", Artist= artistId, Genre="Bluegrass", ReleaseDate=DateTime.Now },
-                new Album { Id = Guid.NewGuid(), Title = "Album 2", Artist= artistId, Genre="Bluegrass", ReleaseDate=DateTime.Now },
-                new Album { Id = Guid.NewGuid(), Title = "Album 3", Artist= artistId, Genre="Bluegrass", ReleaseDate=DateTime.Now },
+                new Album { Id = Guid.NewGuid(), Title = "Album 1", ArtistId= artistId, Genre="Bluegrass", ReleaseDate=DateTime.Now },
+                new Album { Id = Guid.NewGuid(), Title = "Album 2", ArtistId= artistId, Genre="Bluegrass", ReleaseDate=DateTime.Now },
+                new Album { Id = Guid.NewGuid(), Title = "Album 3", ArtistId= artistId, Genre="Bluegrass", ReleaseDate=DateTime.Now },
             });
 
             await dbContext.SaveChangesAsync();
@@ -58,9 +58,9 @@ namespace Music.Persistence.Tests
 
             await dbContext.Albums.AddRangeAsync(new[]
 {
-                new Album { Id = Guid.NewGuid(), Title = "Album 1", Artist= artistId, Genre="Bluegrass", ReleaseDate=DateTime.Now },
-                new Album { Id = Guid.NewGuid(), Title = "Album 2", Artist= artistId, Genre="Bluegrass", ReleaseDate=DateTime.Now },
-                new Album { Id = Guid.NewGuid(), Title = "Album 3", Artist= artistId, Genre="Bluegrass", ReleaseDate=DateTime.Now },
+                new Album { Id = Guid.NewGuid(), Title = "Album 1", ArtistId= artistId, Genre="Bluegrass", ReleaseDate=DateTime.Now },
+                new Album { Id = Guid.NewGuid(), Title = "Album 2", ArtistId= artistId, Genre="Bluegrass", ReleaseDate=DateTime.Now },
+                new Album { Id = Guid.NewGuid(), Title = "Album 3", ArtistId= artistId, Genre="Bluegrass", ReleaseDate=DateTime.Now },
             });
 
             await dbContext.SaveChangesAsync();
@@ -88,7 +88,7 @@ namespace Music.Persistence.Tests
             dbContext.Artists.Add(artist);
             await dbContext.SaveChangesAsync();
 
-            var album = new Album { Id = Guid.NewGuid(), Title = "Album 1", Artist = artistId, Genre = "Bluegrass", ReleaseDate = DateTime.Now };
+            var album = new Album { Id = Guid.NewGuid(), Title = "Album 1", ArtistId = artistId, Genre = "Bluegrass", ReleaseDate = DateTime.Now };
             // Act
             await repository.AddAsync(album);
             await dbContext.SaveChangesAsync();
@@ -113,7 +113,7 @@ namespace Music.Persistence.Tests
             var artist = new Artist { Id = artistId, Name = "Artist 4" };
             dbContext.Artists.Add(artist);
 
-            var album = new Album { Id = Guid.NewGuid(), Title = "Album 1", Artist = artistId, Genre = "Bluegrass", ReleaseDate = DateTime.Now };
+            var album = new Album { Id = Guid.NewGuid(), Title = "Album 1", ArtistId = artistId, Genre = "Bluegrass", ReleaseDate = DateTime.Now };
             dbContext.Albums.Add(album);
             await dbContext.SaveChangesAsync();
 

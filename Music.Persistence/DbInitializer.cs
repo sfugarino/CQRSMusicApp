@@ -33,7 +33,7 @@ namespace Music.Persistence
             {
                 Id = albumId,
                 Title = "Silver Reflections",
-                Artist = authorId,
+                ArtistId = authorId,
                 Genre = "Bluegrass",
                 ReleaseDate = new DateTime(1981, 1, 1)
             };
@@ -45,8 +45,8 @@ namespace Music.Persistence
             {
                 Id = Guid.NewGuid(),
                 Title = "Tennessee 1949",
-                Artist = authorId,
-                Album = albumId,
+                ArtistId = authorId,
+                AlbumId = albumId,
                 Genre = "Bluegrass",
                 ReleaseDate = new DateTime(1981, 1, 1)
             };

@@ -52,17 +52,6 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-using (var scope = app.Services.GetService<IServiceScopeFactory>()?.CreateScope())
-using (var context = scope?.ServiceProvider.GetService<ApplicationDbContext>())
-{
-    if (context is not null)
-    {
-        context.Database.Migrate();
-        DbInitializer.Initialize(context);
-    }
-
-}
-
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -76,5 +65,16 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+using (var scope = app.Services.CreateScope())
+{
+    using (var context = scope?.ServiceProvider.GetRequiredService<ApplicationDbContext>())
+    {
+        if (context is not null)
+        {
+            context.Database.Migrate();
+            DbInitializer.Initialize(context);
+        }
 
+    }
+}
 app.Run();

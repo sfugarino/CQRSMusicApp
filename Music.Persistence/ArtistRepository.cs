@@ -20,7 +20,10 @@ namespace Music.Persistence
 
         public async Task<Artist[]> GetAllAsync(CancellationToken cancellationToken)
         {
-            return await _context.Set<Artist>().ToArrayAsync(cancellationToken);
+            return await _context.Set<Artist>()
+                .Include(e => e.Albums!)
+                .ThenInclude(e => e.Songs)
+                .ToArrayAsync(cancellationToken);
         }
 
         public async Task<Artist?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default)
