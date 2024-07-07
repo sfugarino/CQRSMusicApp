@@ -18,6 +18,11 @@ namespace Music.Persistence
             _context = context;
         }
 
+        public async Task<Song[]> GetAllAsync(CancellationToken cancellationToken)
+        {
+            return await _context.Set<Song>().ToArrayAsync(cancellationToken);
+        }
+
         public async Task<Song?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default)
         {
             return await _context.Set<Song>()
@@ -27,6 +32,11 @@ namespace Music.Persistence
         public void Add(Song song)
         {
            _context.Set<Song>().Add(song);
+        }
+
+        public async Task AddAsync(Song song)
+        {
+            await _context.Set<Song>().AddAsync(song);
         }
 
         public void Remove(Song song)

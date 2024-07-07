@@ -13,5 +13,7 @@ namespace Music.Domain.Repositories
         Task<Artist?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default);
 
         void Add(Artist artist);
+        Task AddAsync(Artist artist);
+        void Remove(Artist artist);
     }
 }

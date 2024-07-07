@@ -31,7 +31,12 @@ namespace Music.Persistence
 
         public void Add(Artist artist)
         {
-            _context.Set<Artist>().Add(artist);
+            _context.Set<Artist>().AddAsync(artist);
+        }
+
+        public async Task AddAsync(Artist artist)
+        {
+            await _context.Set<Artist>().AddAsync(artist);
         }
 
         public void Remove(Artist artist)

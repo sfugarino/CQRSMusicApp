@@ -11,7 +11,7 @@ namespace Music.Persistence.Tests
         public async Task Fetch_All_Artist_Successfully()
         {
             // Arrange
-            using var factory = new InMemoryApplicationDbFactory("FetchAllDb");
+            using var factory = new InMemoryApplicationDbFactory("ArtistFetchAllDb");
             var dbContext = factory.CreateDbContext();
             var repository = new ArtistRepository(dbContext);
 
@@ -42,7 +42,7 @@ namespace Music.Persistence.Tests
         public async Task Fetch_Artist_By_Id_Successfully()
         {
             // Arrange
-            using var factory = new InMemoryApplicationDbFactory("FetchByIdDb");
+            using var factory = new InMemoryApplicationDbFactory("ArtistFetchByIdDb");
             var dbContext = factory.CreateDbContext();
             var repository = new ArtistRepository(dbContext);
 
@@ -69,13 +69,13 @@ namespace Music.Persistence.Tests
         public async Task Add_Artist_Successfully()
         {
             // Arrange
-            using var factory = new InMemoryApplicationDbFactory("AddDb");
+            using var factory = new InMemoryApplicationDbFactory("ArtistsAddDb");
             var dbContext = factory.CreateDbContext();
             var repository = new ArtistRepository(dbContext);
             var artist = new Artist { Id = Guid.NewGuid(), Name = "Artist 4" };
 
             // Act
-            repository.Add(artist);
+            await repository.AddAsync(artist);
             await dbContext.SaveChangesAsync();
 
             // Assert
@@ -89,7 +89,7 @@ namespace Music.Persistence.Tests
         public async Task Remove_Artist_Successfully()
         {
             // Arrange
-            using var factory = new InMemoryApplicationDbFactory("RemoveDb");
+            using var factory = new InMemoryApplicationDbFactory("ArtistRemoveDb");
             var dbContext = factory.CreateDbContext();
             var repository = new ArtistRepository(dbContext);
 
@@ -102,13 +102,13 @@ namespace Music.Persistence.Tests
 
             await dbContext.SaveChangesAsync();
             var artist = dbContext.Artists.First();
-
             // Act
             repository.Remove(artist);
             await dbContext.SaveChangesAsync();
 
             // Assert
             var result = await repository.GetByIdAsync(artist.Id);
+
             Assert.Null(result);
         }
     }
