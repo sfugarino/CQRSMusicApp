@@ -4,12 +4,14 @@ import { ArtistsAPIActions, ArtistsPageActions } from './artist.actions';
 
 export interface ArtistsState {
   loading: boolean;
-  artist: Artist[];
+  errorMessage: string;
+  artists: Artist[];
 }
 
 const initalState: ArtistsState = {
   loading: false,
-  artist: [],
+  errorMessage: '',
+  artists: [],
 };
 
 export const artistsReducer = createReducer(
