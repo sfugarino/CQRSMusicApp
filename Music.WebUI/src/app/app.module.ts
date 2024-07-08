@@ -3,14 +3,18 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ArtistComponent } from './features/artist/artist.component';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ArtistComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    StoreModule.forRoot({}, {})
   ],
   providers: [],
   bootstrap: [AppComponent]
