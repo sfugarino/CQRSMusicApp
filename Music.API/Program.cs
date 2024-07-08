@@ -5,6 +5,8 @@ using Music.Persistence.Options;
 using Music.Infrastructure;
 using Microsoft.Extensions.Options;
 using Scrutor;
+using Music.Persistence.Repositories;
+using Newtonsoft.Json;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -50,6 +52,12 @@ builder.Services.
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddStackExchangeRedisCache(options =>
+{
+    options.Configuration = "redis:6379"; // redis is the container name of the redis service. 6379 is the default port
+    options.InstanceName = "SampleInstance";
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -77,4 +85,9 @@ using (var scope = app.Services.CreateScope())
 
     }
 }
+
+JsonConvert.DefaultSettings = () => new JsonSerializerSettings
+{
+    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+};
 app.Run();

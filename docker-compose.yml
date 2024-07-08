@@ -17,3 +17,8 @@ services:
       - MSSQL_SA_PASSWORD=Password1*
     ports:
       - "1433:1433"
+  redis:
+    image: redis
+    restart: always
+    ports:
+      - '6379:6379'

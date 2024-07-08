@@ -1,6 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Distributed;
 using Moq;
 using Music.Domain.Entities;
+using Music.Persistence.Repositories;
 
 namespace Music.Persistence.Tests
 {
@@ -11,9 +13,11 @@ namespace Music.Persistence.Tests
         public async Task Fetch_All_Artist_Successfully()
         {
             // Arrange
+            var mockCache = new Mock<IDistributedCache>();
+
             using var factory = new InMemoryApplicationDbFactory("ArtistFetchAllDb");
             var dbContext = factory.CreateDbContext();
-            var repository = new ArtistRepository(dbContext);
+            var repository = new ArtistRepository(dbContext, mockCache.Object);
 
             await dbContext.Artists.AddRangeAsync(new[]
 {
@@ -42,9 +46,11 @@ namespace Music.Persistence.Tests
         public async Task Fetch_Artist_By_Id_Successfully()
         {
             // Arrange
+            var mockCache = new Mock<IDistributedCache>();
+
             using var factory = new InMemoryApplicationDbFactory("ArtistFetchByIdDb");
             var dbContext = factory.CreateDbContext();
-            var repository = new ArtistRepository(dbContext);
+            var repository = new ArtistRepository(dbContext, mockCache.Object);
 
             await dbContext.Artists.AddRangeAsync(new[]
 {
@@ -69,9 +75,11 @@ namespace Music.Persistence.Tests
         public async Task Add_Artist_Successfully()
         {
             // Arrange
+            var mockCache = new Mock<IDistributedCache>();
+
             using var factory = new InMemoryApplicationDbFactory("ArtistsAddDb");
             var dbContext = factory.CreateDbContext();
-            var repository = new ArtistRepository(dbContext);
+            var repository = new ArtistRepository(dbContext, mockCache.Object);
             var artist = new Artist { Id = Guid.NewGuid(), Name = "Artist 4" };
 
             // Act
@@ -89,9 +97,11 @@ namespace Music.Persistence.Tests
         public async Task Remove_Artist_Successfully()
         {
             // Arrange
+            var mockCache = new Mock<IDistributedCache>();
+
             using var factory = new InMemoryApplicationDbFactory("ArtistRemoveDb");
             var dbContext = factory.CreateDbContext();
-            var repository = new ArtistRepository(dbContext);
+            var repository = new ArtistRepository(dbContext, mockCache.Object);
 
             await dbContext.Artists.AddRangeAsync(new[]
 {

@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Music.Domain.Entities;
 using Music.Domain.Repositories;
 
-namespace Music.Persistence
+namespace Music.Persistence.Repositories
 {
     public sealed class SongRepository : ISongRepository
     {
@@ -31,7 +31,7 @@ namespace Music.Persistence
 
         public void Add(Song song)
         {
-           _context.Set<Song>().Add(song);
+            _context.Set<Song>().Add(song);
         }
 
         public async Task AddAsync(Song song)

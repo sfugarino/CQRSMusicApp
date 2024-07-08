@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Music.Domain.Entities;
 using Music.Domain.Repositories;
 
-namespace Music.Persistence
+namespace Music.Persistence.Repositories
 {
     public sealed class AlbumRepository : IAlbumRepository
     {

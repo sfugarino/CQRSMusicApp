@@ -1,6 +1,6 @@
 using Music.Domain.Entities;
 using System.Diagnostics.CodeAnalysis;
-
+using Music.Persistence.Repositories;
 namespace Music.Persistence.Tests
 {
     public class AlbumRepositoryTests
