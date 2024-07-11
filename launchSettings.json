@@ -5,7 +5,9 @@
       "commandVersion": "1.0",
       "serviceActions": {
         "music.api": "StartDebugging",
-        "docker-demo-sqlserver": "StartWithoutDebugging"
+        "docker-demo-sqlserver": "StartWithoutDebugging",
+        "music.webui": "StartWithoutDebugging",
+        "redis": "StartWithoutDebugging"
       }
     }
   }

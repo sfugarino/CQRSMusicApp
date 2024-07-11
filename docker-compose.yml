@@ -2,12 +2,25 @@ version: '3.4'
 
 services:
   music.api:
+    container_name: music.api-container
     image: ${DOCKER_REGISTRY-}musicapi
     build:
       context: .
       dockerfile: Music.API/Dockerfile
     environment:
       - MSSQL_SA_PASSWORD=Password1*
+  
+  music.webui:
+    container_name: music.webui-container
+    image: ${DOCKER_REGISTRY-}musicwebui
+    build:
+      context: Music.WebUI
+      dockerfile: Dockerfile
+    command: "ng serve --open --host 0.0.0.0 --port 4200 --disable-host-check"
+    labels:
+      com.microsoft.visual-studio.project-name: ""
+    ports:
+      - "4200:4200"
   
   docker-demo-sqlserver:
     container_name: docker-demo-sqlserver-container

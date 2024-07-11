@@ -19,4 +19,3 @@ export const selectArtistsErrorMessage = createSelector(
   ({ errorMessage }) => errorMessage
 );
 
-export const selectArtistsTotal = createSelector(selectArtists, sumArtists);

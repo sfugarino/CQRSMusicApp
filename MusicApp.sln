@@ -3,27 +3,27 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.34928.147
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Music.Domain", "Music.Domain\Music.Domain.csproj", "{375C2507-23DF-496E-B944-C64B565B62C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Music.Domain", "Music.Domain\Music.Domain.csproj", "{375C2507-23DF-496E-B944-C64B565B62C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Music.Infrastructure", "Music.Infrastructure\Music.Infrastructure.csproj", "{19FFF515-6AE2-44C2-B9DE-F94169FB97D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Music.Infrastructure", "Music.Infrastructure\Music.Infrastructure.csproj", "{19FFF515-6AE2-44C2-B9DE-F94169FB97D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Music.Persistence", "Music.Persistence\Music.Persistence.csproj", "{A62202A4-BAC3-4A6E-B37B-EBA2ED4023CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Music.Persistence", "Music.Persistence\Music.Persistence.csproj", "{A62202A4-BAC3-4A6E-B37B-EBA2ED4023CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Music.API", "Music.API\Music.API.csproj", "{7291101D-E956-4698-A7BD-F1D3F2C3E03A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Music.API", "Music.API\Music.API.csproj", "{7291101D-E956-4698-A7BD-F1D3F2C3E03A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unit Tests", "Unit Tests", "{8FA8502E-E688-47BA-801F-64E684937CE2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Integration Tests", "Integration Tests", "{1AE4DA81-739B-45BE-B3E9-A83E994B5152}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Music.Persistence.Tests", "Music.Persistence.Tests\Music.Persistence.Tests.csproj", "{94647C40-93B0-4123-AE37-C7559C7B72AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Music.Persistence.Tests", "Music.Persistence.Tests\Music.Persistence.Tests.csproj", "{94647C40-93B0-4123-AE37-C7559C7B72AB}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{A435BAE3-B28B-4893-AA81-BD61F2B1D539}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Music.Application", "Music.Application\Music.Application.csproj", "{38EADB70-B905-4BBF-A238-65EB403AB4B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Music.Application", "Music.Application\Music.Application.csproj", "{38EADB70-B905-4BBF-A238-65EB403AB4B7}"
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "Music.WebUI", "Music.WebUI\Music.WebUI.esproj", "{A1C3F84C-AE7D-442A-84AE-63694D8F4BC1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Music.Presentation", "Music.Presentation\Music.Presentation.csproj", "{59AE9813-5E1A-426C-8315-B70FA9EBF34E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Music.Presentation", "Music.Presentation\Music.Presentation.csproj", "{59AE9813-5E1A-426C-8315-B70FA9EBF34E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
